@@ -26,8 +26,8 @@ This project aims to create an **AI-Driven Patient Assistant** using **Reinforce
 
 ### Deployed Versions
 - **Web Application:** [Live Demo](https://main.d2xc8vkw4iwmsr.amplifyapp.com) 
-- **Android App:** [Download APK](https://drive.google.com/file/d/1evF1iGhbSOUcbUFW3e5wSlK0yIekTCSa/view?usp=sharing)
-- **iOS App:** [Download iOS App](https://example.com/download/ios) 
+- **Android App:** [Download APK](https://glassdoorimages.s3.eu-north-1.amazonaws.com/app-release.apk)
+- **iOS App:** [Download iOS App](https://glassdoorimages.s3.eu-north-1.amazonaws.com/app-release.apk) 
 
 ### API Documentation
 - The API documentation can be found [here](https://example.com/api-docs).
