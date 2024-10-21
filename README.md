@@ -1,39 +1,46 @@
 # Smart-Health-Assistant-with-Adaptive-AI
 
-# AI-Driven Healthcare: Patient Assistant with Reinforcement Learning
+## AI-Driven Healthcare: Patient Assistant with Reinforcement Learning
 
-## Project Overview
+### Project Overview
 This project aims to create an **AI-Driven Patient Assistant** using **Reinforcement Learning (RL)** to enhance patient care and engagement. The system continuously learns from patient feedback and healthcare interactions to provide adaptive and optimized healthcare recommendations. By integrating **Augmented Reality (AR)**, we aim to create an intuitive and interactive healthcare experience.
 
-## Key Features
+### Key Features
 - **Personalized Patient Care:** The assistant adapts healthcare suggestions in real-time based on individual patient data and interactions.
 - **Reinforcement Learning Model:** The RL core learns from patient behavior to improve healthcare outcomes over time.
 - **Real-time Monitoring and Decision Support:** Sensors and AI analytics continuously monitor the patient’s health and provide timely insights.
 - **Augmented Reality Integration:** AR-based visualizations help patients easily understand health data and follow healthcare instructions.
 - **Adaptive and Scalable System:** Designed to be accessible to users in both hospital and home care settings, and adaptable to various healthcare environments.
 
-## Objectives
+### Objectives
 1. **Develop a Personalized AI Patient Assistant:** Use RL to create a dynamic system capable of learning from patient interactions.
 2. **Enhance Patient Engagement and Compliance:** Provide reminders and feedback to encourage adherence to treatment plans.
 3. **Implement Real-time Monitoring:** Use IoT devices and sensors to track patient vitals and offer decision support for clinicians.
 4. **Use AR for Health Visualization:** Provide intuitive visual guidance for patients to manage their health.
 5. **Ensure Compliance with Regulations:** Follow healthcare regulations (HIPAA, GDPR) and implement safety protocols.
 
-## System Architecture
+### System Architecture
 - **Reinforcement Learning AI Core**: Personalized healthcare suggestions based on continuous learning from patient feedback.
 - **AR Interface**: Integrated with smartphones and wearables for easy interaction with healthcare data.
 - **Data Collection & Integration**: Real-time monitoring using Electronic Health Records (EHR), wearables, and IoT devices.
 
-## Team
+### Deployed Versions
+- **Web Application:** [Live Demo](https://main.d2xc8vkw4iwmsr.amplifyapp.com) 
+- **Android App:** [Download APK](https://drive.google.com/file/d/1evF1iGhbSOUcbUFW3e5wSlK0yIekTCSa/view?usp=sharing) (Replace with actual link)
+- **iOS App:** [Download iOS App](https://example.com/download/ios) (Replace with actual link)
+
+### API Documentation
+- The API documentation can be found [here](https://example.com/api-docs) (Replace with actual link).
+
+### Team
 - **Mr. Saran V**
 - **Mr. Manoj Kumar K**  
 - **Mr. Balaji K**  
 
 **Guide:** Dr. Balakrishnan M, KCE Coimbatore
 
-## License
+### License
 This project is licensed under the **Apache License 2.0** - see the LICENSE file for details.
 
-## Contact
+### Contact
 For more information, please contact [saransathi1010@gmail.com].
-
