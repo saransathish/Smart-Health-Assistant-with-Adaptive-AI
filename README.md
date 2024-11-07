@@ -1,4 +1,4 @@
-# Smart-Health-Assistant-with-Adaptive-AI
+# Smart-Health-Assistant-with-Adaptive-AI (Project in Progress)
 
 ## AI-Driven Healthcare: Patient Assistant with Reinforcement Learning
 
