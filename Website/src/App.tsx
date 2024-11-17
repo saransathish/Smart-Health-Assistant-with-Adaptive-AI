@@ -1,7 +1,12 @@
+import Chatbot from "./components/Chatbot"
 
 function App() {
 
-  return <h1> hello </h1>
+    return (
+      <div className="App" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
+        <Chatbot />
+      </div>
+    );
 }
 
 export default App
