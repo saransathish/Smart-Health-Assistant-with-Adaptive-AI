@@ -1,13 +1,11 @@
-# Smart-Health-Assistant-with-Adaptive-AI (Project in Progress)
-
-## AI-Driven Healthcare: Patient Assistant with Reinforcement Learning
+# Improvising User Interactive Ai healthcare Bot Using BERD (Project in Progress)
 
 ### Project Overview
-This project aims to create an **AI-Driven Patient Assistant** using **Reinforcement Learning (RL)** to enhance patient care and engagement. The system continuously learns from patient feedback and healthcare interactions to provide adaptive and optimized healthcare recommendations. By integrating **Augmented Reality (AR)**, we aim to create an intuitive and interactive healthcare experience.
+This project aims to create an **AI-Driven Patient Assistant** using **BERD** to enhance patient care and engagement. The system continuously learns from patient feedback and healthcare interactions to provide adaptive and optimized healthcare recommendations. By integrating **Augmented Reality (AR)**, we aim to create an intuitive and interactive healthcare experience.
 
 ### Key Features
 - **Personalized Patient Care:** The assistant adapts healthcare suggestions in real-time based on individual patient data and interactions.
-- **Reinforcement Learning Model:** The RL core learns from patient behavior to improve healthcare outcomes over time.
+- **BERT Learning Model:** The RL core learns from patient behavior to improve healthcare outcomes over time.
 - **Real-time Monitoring and Decision Support:** Sensors and AI analytics continuously monitor the patient’s health and provide timely insights.
 - **Augmented Reality Integration:** AR-based visualizations help patients easily understand health data and follow healthcare instructions.
 - **Adaptive and Scalable System:** Designed to be accessible to users in both hospital and home care settings, and adaptable to various healthcare environments.
@@ -16,8 +14,7 @@ This project aims to create an **AI-Driven Patient Assistant** using **Reinforce
 1. **Develop a Personalized AI Patient Assistant:** Use RL to create a dynamic system capable of learning from patient interactions.
 2. **Enhance Patient Engagement and Compliance:** Provide reminders and feedback to encourage adherence to treatment plans.
 3. **Implement Real-time Monitoring:** Use IoT devices and sensors to track patient vitals and offer decision support for clinicians.
-4. **Use AR for Health Visualization:** Provide intuitive visual guidance for patients to manage their health.
-5. **Ensure Compliance with Regulations:** Follow healthcare regulations (HIPAA, GDPR) and implement safety protocols.
+4. **Ensure Compliance with Regulations:** Follow healthcare regulations (HIPAA, GDPR) and implement safety protocols.
 
 ### System Architecture
 - **Reinforcement Learning AI Core**: Personalized healthcare suggestions based on continuous learning from patient feedback.
@@ -26,8 +23,8 @@ This project aims to create an **AI-Driven Patient Assistant** using **Reinforce
 
 ### Deployed Versions
 - **Web Application:** [Live Demo](https://main.d2xc8vkw4iwmsr.amplifyapp.com) 
-- **Android App:** [Download APK](https://glassdoorimages.s3.eu-north-1.amazonaws.com/app-release.apk)
-- **iOS App:** [Download iOS App](https://glassdoorimages.s3.eu-north-1.amazonaws.com/app-release.apk) 
+- **Android App:** [Download APK](https://glassdoorimages.s3.eu-north-1.amazonaws.com/SmartCare.apk)
+- **iOS App:** [Download iOS App](https://glassdoorimages.s3.eu-north-1.amazonaws.com/SmartCare.apk) 
 
 ### API Documentation
 - The API documentation can be found [here](https://example.com/api-docs).
