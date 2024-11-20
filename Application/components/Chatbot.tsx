@@ -31,9 +31,9 @@ const ChatbotMobile: React.FC = () => {
       method: "POST",
       url: "https://chatgpt-42.p.rapidapi.com/chatbotapi",
       headers: {
-        "x-rapidapi-key": "0a607eeb25msha83e3f98c643f42p1e8d71jsn99685d9413f5",
-        "x-rapidapi-host": "chatgpt-42.p.rapidapi.com",
-        "Content-Type": "application/json",
+        'x-rapidapi-key': 'e813c98573msh5b4dd5910352d7fp18d809jsn2452fd0a2647',
+    'x-rapidapi-host': 'chatgpt-42.p.rapidapi.com',
+    'Content-Type': 'application/json'
       },
       data: {
         bot_id: "OEXJ8qFp5E5AwRwymfPts90vrHnmr8yZgNE171101852010w2S0bCtN3THp448W7kDSfyTf3OpW5TUVefz",
