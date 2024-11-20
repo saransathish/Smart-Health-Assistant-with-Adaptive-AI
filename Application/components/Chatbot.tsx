@@ -21,7 +21,7 @@ const ChatbotMobile: React.FC = () => {
     if (!input.trim()) return;
 
     // Prepare the API input but leave UI input unchanged
-    const modifiedInput = `${input.trim()} (within 50 words)`;
+    const modifiedInput = `${input.trim()} (within 10 to 20 words and you need to answer only medical question else say only has medical knowledge)`;
     const userMessage = { role: "user", content: input.trim() }; // Display only user input in the UI
     setMessages((prev) => [...prev, userMessage]);
     setInput("");

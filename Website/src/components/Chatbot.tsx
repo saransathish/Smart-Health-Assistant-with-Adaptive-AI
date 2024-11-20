@@ -92,7 +92,7 @@ const ChatbotUI: React.FC = () => {
     if (!input.trim()) return;
 
     const userMessageContent = input.trim();  // The message that will be displayed
-    const modifiedInput = `${userMessageContent} (within 50 words)`;  // Modify for API request
+    const modifiedInput = `${userMessageContent} (within 10 to 20 words and you need to answer only medical question else say only has medical knowledge)`;  // Modify for API request
 
     const userMessage = { role: "user", content: userMessageContent }; // Send only the original content to UI
     setMessages((prev) => [...prev, userMessage]);
