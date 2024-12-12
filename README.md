@@ -37,7 +37,7 @@ This project aims to create an **AI-Driven Patient Assistant** using **BERD** to
 **Guide:** Dr. Balakrishnan M, KCE Coimbatore
 
 ### License
-This project is licensed under the **Apache License 2.0** - see the LICENSE file for details.
+This project is licensed under the **Apache License 2.0** - see the LICENSE file for details. 
 
 ### Contact
 For more information, please contact [saransathi1010@gmail.com].
