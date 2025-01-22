@@ -1,14 +1,14 @@
 from pathlib import Path
 from datetime import timedelta
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 import os
 
-load_dotenv()
-MISTRAL_API_KEY = os.getenv('MISTRAL_API_KEY')
-AWS_USER_NAME = os.getenv('AWS_USER_NAME')
-AWS_USER_PASS = os.getenv('AWS_USER_PASS')
-AWS_DB_NAME = os.getenv('AWS_DB_NAME')
-AWS_DB_HOST = os.getenv('AWS_DB_HOST')
+# load_dotenv()
+MISTRAL_API_KEY = "fKvEx9jkjolPiDfSY2h6HF3RcZGyX6hi"
+# AWS_USER_NAME = os.getenv('AWS_USER_NAME')
+# AWS_USER_PASS = os.getenv('AWS_USER_PASS')
+# AWS_DB_NAME = os.getenv('AWS_DB_NAME')
+# AWS_DB_HOST = os.getenv('AWS_DB_HOST')
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -76,10 +76,10 @@ WSGI_APPLICATION = 'Backend.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': AWS_DB_NAME,  # Replace with your database name
-        'USER': AWS_USER_NAME,  # Replace with your database username
-        'PASSWORD': AWS_USER_PASS,  # Replace with your database password
-        'HOST': AWS_DB_HOST,  # Replace with your AWS RDS endpoint
+        'NAME': "smartcare",  # Replace with your database name
+        'USER': "postgres",  # Replace with your database username
+        'PASSWORD': "postgres",  # Replace with your database password
+        'HOST': "smartcare.cdy8yi0g8oyc.us-east-2.rds.amazonaws.com",  # Replace with your AWS RDS endpoint
         'PORT': '5432',  # Default PostgreSQL port
     }
 }
