@@ -1,5 +1,5 @@
 # Improvising User Interactive Ai healthcare Bot Using BERT (Project in Progress)
-
+ 
 ### Project Overview
 This project aims to create an **AI-Driven Patient Assistant** using **BERD** to enhance patient care and engagement. The system continuously learns from patient feedback and healthcare interactions to provide adaptive and optimized healthcare recommendations. By integrating **Augmented Reality (AR)**, we aim to create an intuitive and interactive healthcare experience.
 
