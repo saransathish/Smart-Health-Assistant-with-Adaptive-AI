@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'http://127.0.0.1:8000/api'; // Replace with your Django backend URL
+const API_URL = 'http://18.222.232.37:8000/api'; // Replace with your Django backend URL
 
 export const register = async (username: string, email: string, password: string, phone_number: string) => {
     const response = await axios.post(`${API_URL}/register/`, {
