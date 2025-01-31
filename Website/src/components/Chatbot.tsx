@@ -1,4 +1,3 @@
-
 import React, { useState, useRef, useEffect } from 'react';
 import './css/Chatbot.css';
 
@@ -85,6 +84,7 @@ export const Chatbot: React.FC = () => {
         throw error;
     }
 };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!inputMessage.trim() || isLoading) return;
@@ -109,7 +109,7 @@ export const Chatbot: React.FC = () => {
         ...prev,
         {
           role: 'assistant',
-          content: response,
+          content: response.response,
           timestamp: formatTimestamp()
         }
       ]);
@@ -141,7 +141,7 @@ export const Chatbot: React.FC = () => {
         ...prev,
         {
           role: 'assistant',
-          content: response,
+          content: response.response,
           timestamp: formatTimestamp()
         }
       ]);
