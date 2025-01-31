@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import './css/Chatbot.css';
+import { v4 as uuidv4 } from 'uuid';
 
 interface Message {
   role: 'user' | 'assistant';
@@ -16,7 +17,7 @@ interface ChatResponse {
 const API_CONFIG = {
   BASE_URL: 'http://localhost:8000',
   ENDPOINTS: {
-    CHAT: '/api/chatbot/chat/'  // Updated endpoint to match Django view
+    CHAT: '/api/chatbot/chat/'
   }
 };
 
@@ -25,17 +26,27 @@ export const Chatbot: React.FC = () => {
   const [inputMessage, setInputMessage] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [sessionId, setSessionId] = useState<string>('');
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
-  // Load chat history from localStorage on component mount
+  // Initialize session ID and load chat history
   useEffect(() => {
+    const savedSessionId = localStorage.getItem('medical_session_id');
+    if (!savedSessionId) {
+      const newSessionId = uuidv4();
+      localStorage.setItem('medical_session_id', newSessionId);
+      setSessionId(newSessionId);
+    } else {
+      setSessionId(savedSessionId);
+    }
+
     const savedChat = localStorage.getItem('medical_chat_history');
     if (savedChat) {
       setMessages(JSON.parse(savedChat));
     }
   }, []);
 
-  // Save chat history to localStorage whenever it updates
+  // Save chat history to localStorage
   useEffect(() => {
     if (messages.length > 0) {
       localStorage.setItem('medical_chat_history', JSON.stringify(messages));
@@ -60,30 +71,31 @@ export const Chatbot: React.FC = () => {
     const url = `${API_CONFIG.BASE_URL}${API_CONFIG.ENDPOINTS.CHAT}`;
     
     try {
-        const response = await fetch(url, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json',
-            },
-            credentials: 'include',  // Important for CORS
-            mode: 'cors',           // Explicitly state CORS mode
-            body: JSON.stringify({ query }),
-        });
+      const response = await fetch(url, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+        credentials: 'include',
+        mode: 'cors',
+        body: JSON.stringify({ 
+          query,
+          session_id: sessionId
+        }),
+      });
 
-        if (!response.ok) {
-            const errorData = await response.json();
-            throw new Error(errorData.message || `Server error: ${response.status}`);
-        }
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.message || `Server error: ${response.status}`);
+      }
 
-        const data = await response.json();
-        return data;
-
+      return await response.json();
     } catch (error) {
-        console.error('API Error:', error);
-        throw error;
+      console.error('API Error:', error);
+      throw error;
     }
-};
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -105,14 +117,18 @@ export const Chatbot: React.FC = () => {
     try {
       const response = await sendMessageToBackend(userMessage);
       
-      setMessages(prev => [
-        ...prev,
-        {
-          role: 'assistant',
-          content: response.response,
-          timestamp: formatTimestamp()
-        }
-      ]);
+      if (response.success) {
+        setMessages(prev => [
+          ...prev,
+          {
+            role: 'assistant',
+            content: response.response,
+            timestamp: formatTimestamp()
+          }
+        ]);
+      } else {
+        setError(response.response);
+      }
     } catch (error) {
       const errorMessage = error instanceof Error ? error.message : 'Failed to send message';
       setError(errorMessage);
@@ -123,6 +139,9 @@ export const Chatbot: React.FC = () => {
 
   const clearConversation = () => {
     setMessages([]);
+    const newSessionId = uuidv4();
+    localStorage.setItem('medical_session_id', newSessionId);
+    setSessionId(newSessionId);
     localStorage.removeItem('medical_chat_history');
   };
 
@@ -137,14 +156,18 @@ export const Chatbot: React.FC = () => {
     try {
       const response = await sendMessageToBackend(lastUserMessage.content);
       
-      setMessages(prev => [
-        ...prev,
-        {
-          role: 'assistant',
-          content: response.response,
-          timestamp: formatTimestamp()
-        }
-      ]);
+      if (response.success) {
+        setMessages(prev => [
+          ...prev,
+          {
+            role: 'assistant',
+            content: response.response,
+            timestamp: formatTimestamp()
+          }
+        ]);
+      } else {
+        setError(response.response);
+      }
     } catch (error) {
       const errorMessage = error instanceof Error ? error.message : 'Failed to retry message';
       setError(errorMessage);
@@ -166,7 +189,7 @@ export const Chatbot: React.FC = () => {
         <button 
           onClick={clearConversation} 
           className="clear-button"
-          title="Clear conversation"
+          title="Clear conversation and start new session"
         >
           🗑️
         </button>
@@ -176,7 +199,7 @@ export const Chatbot: React.FC = () => {
         {messages.length === 0 ? (
           <div className="welcome-message">
             <h2>Hello! 👋</h2>
-            <p>I'm SmartCare, your medical assistant. How can I help you today?</p>
+            <p>I'm SmartCare, your medical assistant. I can help you with medical-related questions.</p>
             <p className="disclaimer">
               Note: I provide general medical information only. Always consult with a healthcare 
               professional for specific medical advice.
